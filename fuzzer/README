@@ -1,0 +1,16 @@
+fuzzer.py is a basic web application fuzzer that detects potential XSS vulnerabilities via URL parameters.
+
+Author: Yingyang Liang 
+
+Acknowledgements:
+
+
+How it works:
+
+
+Correctly Implemented:
+
+Not Implemented:
+
+
+Hours spent:
