@@ -1,16 +1,32 @@
-fuzzer.py is a basic web application fuzzer that detects potential XSS vulnerabilities via URL parameters.
+############################################################
+    Reflective XSS Fuzzer for Websites and Web Applications 
+    Created for CS116
+    Author: Yingyang Liang
+##########################################################
 
-Author: Yingyang Liang 
+Summary:
+fuzzer.py is a basic web application fuzzer that detects potential reflected XSS vulnerabilities.
+
+Usage:
+fuzzer.py [-w wordlist_file] URL
+The client can provide a wordlist file as payload for the fuzzer.
+If the client does not, the default wordlist will be used i.e. xss.txt 
 
 Acknowledgements:
-
+Consulted Google and stackoverflow for Python specs
 
 How it works:
+Program checks if a website is vulnerable to reflective XSS attacks by checking if they sanitize user-input. Program will sent a malicious HTTP GET request with the payload injected in the URL. If the website does not sanitize user-input, our payload will be included in the website's HTTP resposne. 
 
+Program has option to take in client provided wordlist for payloads or if the client doesn't, uses it's own wordlist.
 
 Correctly Implemented:
+- Option to generate payloads from client provided word-list (Including fuzzing files from Daniel Miessler's SecList)
+- Able to determine https://www.cs.tufts.edu/comp/120/hackme.php has a reflected XSS vulnerability
+- Able to check any website for reflected XSS vulnerabilities
 
 Not Implemented:
-
+- Only checks for limited case where URL is followed by "?token="
 
 Hours spent:
+2h

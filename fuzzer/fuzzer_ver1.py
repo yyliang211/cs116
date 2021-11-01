@@ -7,20 +7,9 @@ import getopt
 def usage():
     print("Usage: fuzzer.py [URL]")
 
-def main():
-    try:
-        opts, args = getopt.getopt(sys.argv[1:],"hl:u:",["list=","url="])
-    except getopt.GetoptError:
+if (len(sys.argv) != 2):
         usage()
         sys.exit(1)
-    for opt, arg in opts, args:
-        if opt == '-h':
-            usage()
-            sys.exit(1)
-        if opt in ("-l", "--list"):
-            seclist = arg
-        if opt in ("-u", "--url"):
-            base_url = arg
 
 base_url = sys.argv[1]
 payload = "<script>alert(1)</script>;"
