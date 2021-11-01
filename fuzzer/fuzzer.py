@@ -1,6 +1,4 @@
 import requests
-import string
-import random
 import sys
 import argparse
 
